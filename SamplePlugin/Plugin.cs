@@ -6,10 +6,13 @@ using Dalamud.Interface.Windowing;
 using Dalamud.Plugin.Services;
 using SamplePlugin.Windows;
 
+
 namespace SamplePlugin;
+
 
 public sealed class Plugin : IDalamudPlugin
 {
+
     [PluginService] internal static IDalamudPluginInterface PluginInterface { get; private set; } = null!;
     [PluginService] internal static ITextureProvider TextureProvider { get; private set; } = null!;
     [PluginService] internal static ICommandManager CommandManager { get; private set; } = null!;
@@ -27,6 +30,7 @@ public sealed class Plugin : IDalamudPlugin
     private MainWindow MainWindow { get; init; }
 
     public Plugin()
+    
     {
         Configuration = PluginInterface.GetPluginConfig() as Configuration ?? new Configuration();
 
